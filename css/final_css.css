@@ -1,0 +1,28 @@
+.estilo{
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 5%;
+    transition: transform 1s;
+    transform: translateX(0) scale(0.99);
+}
+
+.estilo:hover{
+  transform: translateX(1px) scale(1);
+  box-shadow: 0 0 20px purple;
+  background: white;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #cecece;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
