@@ -30,20 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function submitForm() {
     var params = new URLSearchParams(window.location.search);
-    var email = params.get("email");
+    
 
-    // Construa o link com os dados preenchidos
-    var mailtoLink = `mailto:${email}?subject=Confirmação&body=Detalhes da confirmação:%0A%0A
-        Nome: ${params.get("nome")}%0A
-        E-mail: ${email}%0A
-        Telefone: ${params.get("telefone")}%0A
-        CPF: ${params.get("cpf")}%0A
-        Data: ${params.get("data")}%0A
-        Participantes: ${params.get("participantes")}`;
-
-    // Abra o cliente de e-mail padrão com os dados preenchidos
-    window.location.href = mailtoLink;
-
-    // Redirecione para a página final
-    window.location.href = "./final.html";
+    window.location.href = "/html/final.html";
 }
