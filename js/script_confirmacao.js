@@ -25,10 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector("#nome-confirmacao").innerText = "Erro!";
     }
 
-    // ... outros processamentos na página de confirmação
 });
-
-
 
 function submitForm(){
     window.location.href =  '/html/final.html';
