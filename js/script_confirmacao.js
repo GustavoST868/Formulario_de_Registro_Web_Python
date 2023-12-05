@@ -20,6 +20,8 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector("#data-confirmacao").innerText = "Data: " + dataEscolhida;
         document.querySelector("#participantes-confirmacao").innerText = "Participantes: " + numeroParticipantes;
 
+        // Enviar dados para o PHP usando AJAX
+        enviarDadosParaPHP(nomeCompleto, email, numeroTelefone, cpf, dataEscolhida, numeroParticipantes);
     } else {
         // Se não houver parâmetros, exibir uma mensagem padrão
         document.querySelector("#nome-confirmacao").innerText = "Erro!";
@@ -28,12 +30,10 @@ document.addEventListener("DOMContentLoaded", function () {
     // ... outros processamentos na página de confirmação
 });
 
-function submitForm() {
-    var params = new URLSearchParams(window.location.search);
-
+function enviarDadosParaPHP(nome, email, telefone, cpf, data, participantes) {
     // Use AJAX para enviar dados para o arquivo PHP
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "/php/processar_dados.php?" + params.toString(), true);
+    xhr.open("GET", "/php/processar_dados.php?nome=" + nome + "&email=" + email + "&telefone=" + telefone + "&cpf=" + cpf + "&data=" + data + "&participantes=" + participantes, true);
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
             // Redirecione após o envio bem-sucedido
