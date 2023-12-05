@@ -30,7 +30,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function submitForm() {
     var params = new URLSearchParams(window.location.search);
-    
 
-    window.location.href = "/html/final.html";
+    // Use AJAX para enviar dados para o arquivo PHP
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "/php/processar_dados.php?" + params.toString(), true);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            // Redirecione após o envio bem-sucedido
+            window.location.href = "/html/final.html";
+        }
+    };
+    xhr.send();
 }
