@@ -12,13 +12,13 @@
 
 .confirmacao:hover{
   transform: translateX(1px) scale(1);
-  box-shadow: 0 0 20px purple;
-  background: rgb(253, 214, 241);
+  box-shadow: 0 0 20px rgb(28, 0, 128);
+  background: rgb(218, 214, 253);
 }
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #cecece;
+    background-color: rgb(183, 250, 187);
     margin: 0;
     display: flex;
     align-items: center;
@@ -29,9 +29,13 @@ body {
 button {
     width: 100%;
     padding: 10px;
-    background-color: purple;
+    background-color: rgb(93, 189, 192);
     color: #fff;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+}
+
+button:hover{
+    background-color: rgba(7, 158, 163, 0.719);
 }
