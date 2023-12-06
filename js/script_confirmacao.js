@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
+//redireciona para a pagina final
 function submitForm(){
     window.location.href =  '/html/final.html';
 }

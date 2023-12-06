@@ -1,6 +1,6 @@
 // script.js
 function submitForm() {
-    // Obter os valores dos campos
+    // Obter os valores dos campos para enviar para a pagina de confirmacao
     var nomeCompleto = document.getElementById("username").value;
     var email = document.getElementById("email").value;
     var numeroTelefone = document.getElementById("numero").value;
@@ -8,7 +8,7 @@ function submitForm() {
     var dataEscolhida = document.getElementById("data").value;
     var numeroParticipantes = document.getElementById("numeroParticipantes").value;
 
-    // Construir a URL de redirecionamento com os parâmetros
+    // Construir a URL de redirecionamento com os parâmetros e valores obtidos
     var urlConfirmacao = "./confirmacao.html" +
         "?nome=" + encodeURIComponent(nomeCompleto) +
         "&email=" + encodeURIComponent(email) +
