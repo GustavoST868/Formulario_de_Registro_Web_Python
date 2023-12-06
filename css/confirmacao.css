@@ -1,30 +1,36 @@
-.confirmacao{
-    border: 1px solid rgb(68, 68, 68);
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-top: 5%;
-    transition: transform 1s;
-    transform: translateX(0) scale(0.99);
-}
-
-.confirmacao:hover{
-  transform: translateX(1px) scale(1);
-  box-shadow: 0 0 20px rgb(28, 0, 128);
-  background: rgb(218, 214, 253);
-}
-
 body {
     font-family: Arial, sans-serif;
     background-color: rgb(183, 250, 187);
     margin: 0;
-    display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
+}
+
+.confirmacao {
+    padding: 20px;
+    position: fixed;
+    z-index: 2;
+    border: 1px solid rgb(68, 68, 68);
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 1s;
+    transform: translateX(0) scale(0.99);
+    font-family: Arial, sans-serif;
+    left: 20%;
+    right: 20%;
+    top: 10%;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+    overflow: hidden;
+}
+
+.confirmacao:hover {
+    transform: translateX(1px) scale(1);
+    box-shadow: 0 0 20px rgb(28, 0, 128);
+    background: rgb(218, 214, 253);
 }
 
 button {
@@ -37,11 +43,77 @@ button {
     cursor: pointer;
 }
 
-button:hover{
+button:hover {
     background-color: rgba(7, 158, 163, 0.719);
 }
 
-p{
+p {
     border: 1px solid rgb(68, 68, 68);
     padding: 10px;
 }
+
+section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #3586ff;
+    overflow: hidden;
+}
+
+section .air {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    background-size: 1000px 100px;
+    background: url(https://1.bp.blogspot.com/-xQUc-TovqDk/XdxogmMqIRI/AAAAAAAACvI/AizpnE509UMGBcTiLJ58BC6iViPYGYQfQCLcBGAsYHQ/s1600/wave.png);
+}
+
+section .air.air1 {
+    animation: wave 30s linear infinite 0s;
+    z-index: 1000;
+    opacity: 1;
+    bottom: 0;
+}
+
+section .air.air2 {
+    animation: wave2 15s linear infinite -5s;
+    z-index: 999;
+    opacity: 0.5;
+    bottom: 10px;
+}
+
+section .air.air3 {
+    animation: wave 30s linear infinite -2s;
+    z-index: 998;
+    opacity: 0.2;
+    bottom: 15px;
+}
+
+section .air.air4 {
+    animation: wave2 5s linear infinite -5s;
+    z-index: 997;
+    opacity: 0.7;
+    bottom: 20px;
+}
+
+@keyframes wave {
+    0% {
+        background-position-x: 0px;
+    }
+    100% {
+        background-position-x: 1000px;
+    }
+}
+
+@keyframes wave2 {
+    0% {
+        background-position-x: 0px;
+    }
+    100% {
+        background-position-x: -1000px;
+    }
+}
+
+

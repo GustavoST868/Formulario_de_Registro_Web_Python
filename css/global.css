@@ -6,12 +6,12 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    overflow: hidden; /* Impede que o conteúdo atrás da reserva seja visível */
+    overflow: hidden; 
 }
 
 .reservation-container {
     position: relative;
-    z-index: 2; /* Garante que a reserva fique na frente do conteúdo atrás */
+    z-index: 2; 
 }
 
 .signup-container {
@@ -32,7 +32,7 @@ body {
 
 .signup-container:hover {
     transform: translateX(1px) scale(1);
-    box-shadow: 0 0 20px rgb(28, 0, 128);
+    box-shadow: 0 0 20px rgb(22, 1, 99);
     background: rgb(218, 214, 253);
 }
 
