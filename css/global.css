@@ -29,11 +29,14 @@ body {
     right: 20%;
     left: 20%;
 }
+p{
+    padding: 1px;
+}
 
 .signup-container:hover {
     transform: translateX(1px) scale(1);
     box-shadow: 0 0 20px rgb(22, 1, 99);
-    background: rgb(218, 214, 253);
+    background: rgb(202, 198, 247);
 }
 
 input {
