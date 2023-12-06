@@ -1,4 +1,5 @@
 .confirmacao{
+    border: 1px solid rgb(68, 68, 68);
     background-color: white;
     padding: 20px;
     border-radius: 8px;
@@ -38,4 +39,9 @@ button {
 
 button:hover{
     background-color: rgba(7, 158, 163, 0.719);
+}
+
+p{
+    border: 1px solid rgb(68, 68, 68);
+    padding: 10px;
 }
