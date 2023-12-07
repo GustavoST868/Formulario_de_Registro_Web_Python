@@ -9,7 +9,7 @@ body {
 
 .confirmacao {
     padding: 20px;
-    position: fixed;
+    position: absolute;
     z-index: 2;
     border: 3px solid rgb(68, 68, 68);
     background-color: white;
@@ -23,7 +23,7 @@ body {
     top: 5%;
     align-items: center;
     justify-content: center;
-    height: 70vh;
+    height: auto;
     overflow: hidden;
 }
 
@@ -38,9 +38,10 @@ button {
     padding: 10px;
     background-color: rgb(93, 189, 192);
     color: #fff;
-    border: none;
+    border: 1px solid black;
     border-radius: 4px;
     cursor: pointer;
+    margin-bottom: 5%;
 }
 
 button:hover {

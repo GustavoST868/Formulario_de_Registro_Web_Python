@@ -1,14 +1,12 @@
 // script.js
 function submitForm() {
-    // Obter os valores dos campos para enviar para a pagina de confirmacao
     var nomeCompleto = document.getElementById("username").value;
     var email = document.getElementById("email").value;
-    var numeroTelefone = document.getElementById("numero").value;
-    var cpf = document.getElementById("numero").value;
+    var numeroTelefone = document.getElementById("telefone").value;
+    var cpf = document.getElementById("cpf").value;
     var dataEscolhida = document.getElementById("data").value;
     var numeroParticipantes = document.getElementById("numeroParticipantes").value;
 
-    // Construir a URL de redirecionamento com os parâmetros e valores obtidos
     var urlConfirmacao = "./confirmacao.html" +
         "?nome=" + encodeURIComponent(nomeCompleto) +
         "&email=" + encodeURIComponent(email) +
@@ -17,6 +15,10 @@ function submitForm() {
         "&data=" + encodeURIComponent(dataEscolhida) +
         "&participantes=" + encodeURIComponent(numeroParticipantes);
 
-    // Redirecionar para a página de confirmação
     window.location.href = urlConfirmacao;
 }
+
+$(document).ready(function(){
+    $('#telefone').inputmask('(99) 9999-9999', { oncomplete: function(){ alert('Telefone completo!'); } });
+    $('#cpf').inputmask('999.999.999-99', { oncomplete: function(){ alert('CPF completo!'); } });
+});
