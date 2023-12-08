@@ -1,3 +1,5 @@
+// Salve este conteúdo no arquivo "script.js"
+
 document.addEventListener("DOMContentLoaded", function () {
     // Obter os parâmetros da URL
     var params = new URLSearchParams(window.location.search);
@@ -19,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector("#cpf-confirmacao").innerText = "CPF: " + cpf;
         document.querySelector("#data-confirmacao").innerText = "Data: " + dataEscolhida;
         document.querySelector("#participantes-confirmacao").innerText = "Participantes: " + numeroParticipantes;
-        
+
     } else {
         // Se não houver parâmetros, exibir uma mensagem padrão
         document.querySelector("#nome-confirmacao").innerText = "Erro!";
@@ -27,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
-//redireciona para a pagina final
-function submitForm(){
-    window.location.href =  '/html/final.html';
+// Redireciona para a página final
+function submitForm() {
+    window.location.href = '/html/final.html';
 }
