@@ -11,43 +11,37 @@ body {
     margin-right: auto;
 }
 
-
-
 section {
+    position: relative;
+    z-index: 10;
     max-width: 600px;
     margin-top: 4%;
     margin-left: 35%;
     margin-right: 35%;
     padding: 1em;
-    background-color: rgba(255, 255, 255, 0.8); /* Adjust the alpha value (0.0 to 1.0) for translucency */
+    background-color: rgba(255, 255, 255, 0.5); /* Ajuste o valor de 0.5 para maior ou menor transparência */
     border-radius: 5px;
-    border: solid black 1px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     transform: scale(1);
     transition: transform 2s;
 }
 
-section:hover{
-    background-color: rgba(211, 209, 209, 0.8);
-}
-
-.estilo {
-    margin-left: 36%;
-    margin-right: 40%;
-    font-size: 30px;
-    text-shadow: 2px 2px 5px rgb(99, 98, 98);
-    text-align: center;
-    transition: transform 2s;
-}
-
-.estilo:hover{
-    transform: scale(1.1);
-}
-
-
-
 section:hover {
+    background-color: rgba(211, 209, 209, 0.8);
     transform: scale(1.05);
+}
+
+img {
+    position: absolute;
+    z-index: -1;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    filter: blur(5px); 
 }
 
 label {
@@ -78,6 +72,6 @@ button {
     margin-right: auto;
 }
 
-button:hover{
+button:hover {
     background-color: #333;
 }

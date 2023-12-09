@@ -14,6 +14,7 @@ def index():
         quantidade_pessoas = request.form['quantidade_pessoas']
         
         string = f'''
+        Dados de reserva do formulário:
         nome       = {nome}
         email      = {email}
         cpf        = {cpf}
