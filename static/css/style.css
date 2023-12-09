@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e7e7e7;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.reserva {
+    margin-right: auto;
+}
+
+
+
+section {
+    max-width: 600px;
+    margin-top: 4%;
+    margin-left: 35%;
+    margin-right: 35%;
+    padding: 1em;
+    background-color: rgba(255, 255, 255, 0.8); /* Adjust the alpha value (0.0 to 1.0) for translucency */
+    border-radius: 5px;
+    border: solid black 1px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transform: scale(1);
+    transition: transform 2s;
+}
+
+section:hover{
+    background-color: rgba(211, 209, 209, 0.8);
+}
+
+.estilo {
+    margin-left: 36%;
+    margin-right: 40%;
+    font-size: 30px;
+    text-shadow: 2px 2px 5px rgb(99, 98, 98);
+    text-align: center;
+    transition: transform 2s;
+}
+
+.estilo:hover{
+    transform: scale(1.1);
+}
+
+
+
+section:hover {
+    transform: scale(1.05);
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5em;
+    text-align: left;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    box-sizing: border-box;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button {
+    background-color: #5a5a5a;
+    color: white;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button:hover{
+    background-color: #333;
+}
