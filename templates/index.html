@@ -14,8 +14,6 @@
     <section>
         <form action="/" method="post">
             
-            
-
             <label for="nome">Nome:</label>
             <input type="text" id="nome" name="nome" required>
 
@@ -35,8 +33,10 @@
             <input type="number" id="quantidade_pessoas" name="quantidade_pessoas" min="1" required>
 
             <button type="submit">Reservar Visita</button>
+            
         </form>
     </section>
+
 
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     
