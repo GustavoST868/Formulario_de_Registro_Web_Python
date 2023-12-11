@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #a8acad;
+    background-color: #884c7e;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -27,7 +27,7 @@ section {
 }
 
 section:hover {
-    background-color: rgba(211, 209, 209, 0.8);
+    background-color: rgba(250, 248, 250, 0.8);
     transform: scale(1.05);
 }
 
