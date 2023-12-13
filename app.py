@@ -4,6 +4,7 @@ from datetime import datetime
 
 app = Flask(__name__)
 
+#funcao que cria as tabelas no banco
 def criar_tabela():
     conn = sqlite3.connect('dados_reserva.db')
     cursor = conn.cursor()
@@ -35,10 +36,11 @@ def apagar_todos_os_dados():
     conn.commit()
     conn.close()
 
-# Função para obter a data atual
+# Função para obter a data atual para que caso a data ja tenha passado o banco delete os dados referentes a ela sozinho
 def obter_data_atual():
     return datetime.now().strftime('%Y-%m-%d')
 
+#funcao para inserir os dados no banco
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
@@ -68,6 +70,7 @@ def index():
 
     return render_template('index.html')
 
+#funcao para mostrar os dados que estao no banco
 @app.route('/dados', methods=['GET'])
 def todos_os_dados():
     conn = sqlite3.connect('dados_reserva.db')
@@ -83,7 +86,7 @@ def todos_os_dados():
     conn.close()
     return render_template('todos_os_dados.html', dados=dados)
 
-# Nova rota para apagar todos os dados
+# funcao para apagar todos os dados
 @app.route('/apagar', methods=['GET'])
 def apagar_dados():
     with app.app_context():
