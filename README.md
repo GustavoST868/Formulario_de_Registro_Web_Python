@@ -12,7 +12,7 @@
 #Página de resultado da pesquisa:
 ![image](https://github.com/Gustavovo17102003/Web/assets/136706241/cf074a25-82d0-4b5b-aaba-d7131393bbd4)
 
-
+#Página de obter os dados do usuário:
 ![image](https://github.com/Gustavovo17102003/Web/assets/136706241/103042e4-2b3e-4831-a940-75a769a73eb1)
 
 
