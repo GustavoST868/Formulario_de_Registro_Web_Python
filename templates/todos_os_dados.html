@@ -1,13 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='icons/banco.png') }}" type="image/png">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/css_dados.css') }}">
     <title>Todos os Dados</title>
 </head>
 <body>
-    <h1>Todos os Dados</h1>
-    <table border="1">
+    
+    <h1>Database:</h1>
+    <table border="3">
         <tr>
             <th>ID</th>
             <th>Nome</th>
@@ -19,13 +22,13 @@
         </tr>
         {% for dado in dados %}
         <tr>
-            <td>{{ dado[0] }}</td>
-            <td>{{ dado[1] }}</td>
-            <td>{{ dado[2] }}</td>
-            <td>{{ dado[3] }}</td>
-            <td>{{ dado[4] }}</td>
-            <td>{{ dado[5] }}</td>
-            <td>{{ dado[6] }}</td>
+            <td>{{  dado[0]  }}</td>
+            <td>{{  dado[1]  }}</td>
+            <td>{{  dado[2]  }}</td>
+            <td>{{  dado[3]  }}</td>
+            <td>{{  dado[4]  }}</td>
+            <td>{{  dado[5]  }}</td>
+            <td>{{  dado[6]  }}</td>
         </tr>
         {% endfor %}
     </table>

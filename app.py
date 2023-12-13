@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 import sqlite3
+from datetime import datetime
 
 app = Flask(__name__)
 
@@ -34,6 +35,10 @@ def apagar_todos_os_dados():
     conn.commit()
     conn.close()
 
+# Função para obter a data atual
+def obter_data_atual():
+    return datetime.now().strftime('%Y-%m-%d')
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
@@ -67,11 +72,14 @@ def index():
 def todos_os_dados():
     conn = sqlite3.connect('dados_reserva.db')
     cursor = conn.cursor()
+    
+    # Verificar se a data de reserva já passou e excluir automaticamente os dados
     comando_sql = '''
-    SELECT * FROM reservas;
+    SELECT * FROM reservas WHERE data >= ?;
     '''
-    cursor.execute(comando_sql)
+    cursor.execute(comando_sql, (obter_data_atual(),))
     dados = cursor.fetchall()
+    
     conn.close()
     return render_template('todos_os_dados.html', dados=dados)
 
