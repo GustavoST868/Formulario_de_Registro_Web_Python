@@ -1,3 +1,4 @@
+# app.py
 from flask import Flask, render_template, request, redirect, url_for
 import sqlite3
 from datetime import datetime
@@ -121,6 +122,30 @@ def apagar_todos_os_dados_rota():
     with app.app_context():
         apagar_todos_os_dados()
     return redirect(url_for('todos_os_dados'))
+
+# Rota para pesquisar dados por nome
+@app.route('/pesquisar', methods=['GET', 'POST'])
+def pesquisar_dados():
+    if request.method == 'POST':
+        termo_pesquisa = request.form['termo_pesquisa']
+
+        # Conectar ao banco de dados
+        conn = sqlite3.connect('dados_reserva.db')
+        cursor = conn.cursor()
+
+        # Executar a consulta SQL para pesquisar por nome
+        comando_sql = '''
+        SELECT * FROM reservas WHERE nome LIKE ?;
+        '''
+        cursor.execute(comando_sql, ('%' + termo_pesquisa + '%',))
+        dados = cursor.fetchall()
+
+        # Fechar a conexão
+        conn.close()
+
+        return render_template('pesquisa_resultado.html', dados=dados)
+
+    return render_template('pesquisar.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
