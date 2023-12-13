@@ -1,5 +1,6 @@
 # Web
 #Desenvolvendo e aprendendo HTML e CSS 
+
 #Utilizei Python para back end
 
 #Como os dados do banco são mostrados em forma de tabela:
