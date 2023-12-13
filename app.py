@@ -4,7 +4,7 @@ from datetime import datetime
 
 app = Flask(__name__)
 
-#funcao que cria as tabelas no banco
+# Função que cria as tabelas no banco
 def criar_tabela():
     conn = sqlite3.connect('dados_reserva.db')
     cursor = conn.cursor()
@@ -20,10 +20,32 @@ def criar_tabela():
     );
     '''
     cursor.execute(comando_sql)
+    
+    # Altera a sequência do ID para começar em 1
+    comando_sql_reset_id = '''
+    DELETE FROM sqlite_sequence WHERE name='reservas';
+    INSERT INTO sqlite_sequence (name, seq) VALUES ('reservas', 0);
+    '''
+    cursor.executescript(comando_sql_reset_id)
+
     conn.commit()
     conn.close()
 
 criar_tabela()
+
+# Função para apagar um dado pelo índice
+def apagar_dado_por_indice(indice):
+    conn = sqlite3.connect('dados_reserva.db')
+    cursor = conn.cursor()
+    
+    # Verificar se o índice existe e apagar o dado correspondente
+    comando_sql = '''
+    DELETE FROM reservas WHERE id = ?;
+    '''
+    cursor.execute(comando_sql, (indice,))
+    
+    conn.commit()
+    conn.close()
 
 # Função para apagar todos os dados da tabela
 def apagar_todos_os_dados():
@@ -36,11 +58,11 @@ def apagar_todos_os_dados():
     conn.commit()
     conn.close()
 
-# Função para obter a data atual para que caso a data ja tenha passado o banco delete os dados referentes a ela sozinho
+# Função para obter a data atual para que caso a data já tenha passado o banco delete os dados referentes a ela sozinho
 def obter_data_atual():
     return datetime.now().strftime('%Y-%m-%d')
 
-#funcao para inserir os dados no banco
+# Função para inserir os dados no banco
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
@@ -70,7 +92,7 @@ def index():
 
     return render_template('index.html')
 
-#funcao para mostrar os dados que estao no banco
+# Função para mostrar os dados que estão no banco
 @app.route('/dados', methods=['GET'])
 def todos_os_dados():
     conn = sqlite3.connect('dados_reserva.db')
@@ -86,9 +108,16 @@ def todos_os_dados():
     conn.close()
     return render_template('todos_os_dados.html', dados=dados)
 
-# funcao para apagar todos os dados
+# Rota para apagar um dado por índice
+@app.route('/apagar/<int:indice>', methods=['GET'])
+def apagar_dado_por_indice_rota(indice):
+    with app.app_context():
+        apagar_dado_por_indice(indice)
+    return redirect(url_for('todos_os_dados'))
+
+# Rota para apagar todos os dados
 @app.route('/apagar', methods=['GET'])
-def apagar_dados():
+def apagar_todos_os_dados_rota():
     with app.app_context():
         apagar_todos_os_dados()
     return redirect(url_for('todos_os_dados'))
