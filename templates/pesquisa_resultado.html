@@ -10,7 +10,7 @@
     <title>Resultados da Pesquisa</title>
 </head>
 <body>
-    <h1>Resultados da Pesquisa</h1>
+    <h1>Resultados da Pesquisa</h1><!--local para mostrar os dads -->>
     <table border="1">
         <tr>
             <th>ID</th>
@@ -34,8 +34,8 @@
         {% endfor %}
     </table>
     <br>
-    <a href="{{ url_for('pesquisar_dados') }}">Nova Pesquisa</a>
+    <a href="{{ url_for('pesquisar_dados') }}">Nova Pesquisa</a><!--link para a pagina de pesquisa-->>
     <br>
-    <a href="{{ url_for('todos_os_dados') }}">Ver Todas as Reservas</a>
+    <a href="{{ url_for('todos_os_dados') }}">Ver Todas as Reservas</a><!--link para a pagina de mostrar os dados do banco-->
 </body>
 </html>
