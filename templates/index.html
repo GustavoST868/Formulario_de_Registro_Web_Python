@@ -2,6 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <!--conectando os arquivos de esilizacao e icone-->
     <link rel="icon" href="{{ url_for('static', filename='icons/natureza.png') }}" type="image/png">
     <title>Reservar</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
@@ -13,31 +14,38 @@
     
     <section> <!- Local para obtencao dos dados para a reserva->  
         <form action="/" method="post">
-            
+
+            <!--obter nome-->
             <label for="nome">Nome:</label>
             <input type="text" id="nome" name="nome" required>
 
+            <!--Obter email-->
             <label for="email">E-mail:</label>
             <input type="email" id="email" name="email" required>
 
+            <!--obter cpf-->
             <label for="cpf">CPF:</label>
             <input type="text" id="cpf" name="cpf" required>
 
+            <!--obter telefone-->
             <label for="telefone">Telefone:</label>
             <input type="tel" id="telefone" name="telefone" oninput="formatarTelefone(this)" required>
 
+            <!--obter data por meio de selecao-->
             <label for="data">Data:</label>
             <input type="date" id="data" name="data" required>
 
+            <!--obter a quantidade de pessoas que a reserva de visita se refere-->
             <label for="quantidade_pessoas">Quantidade de Pessoas:</label>
             <input type="number" id="quantidade_pessoas" name="quantidade_pessoas" min="1" required>
 
+            <!--Botao para confirmar a reserva-->
             <button type="submit">Reservar Visita</button>
             
         </form>
     </section>
 
-
+    <!--liga o html ao arquivo javascript-->
     <script src="{{ url_for('static', filename='js/script.js') }}"></script><!- Referencia ao javascript->
     
 
