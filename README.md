@@ -7,7 +7,7 @@
 ![image](https://github.com/Gustavovo17102003/Web/assets/136706241/da6f851a-f5cc-461a-b4af-0ac264882668)
 
 #Página de pesquisa de dados:
-![image](https://github.com/Gustavovo17102003/Web/assets/136706241/cda2dba3-92b6-4547-ad09-33c00780bad7)
+![image](https://github.com/Gustavovo17102003/Web/assets/136706241/09ef5d55-6a80-4c10-acc4-9d73bb1c72fa)
 
 #Página de resultado da pesquisa:
 ![image](https://github.com/Gustavovo17102003/Web/assets/136706241/cf074a25-82d0-4b5b-aaba-d7131393bbd4)
