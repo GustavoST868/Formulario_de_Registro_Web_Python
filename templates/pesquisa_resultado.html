@@ -1,6 +1,6 @@
 <!-- templates/pesquisa_resultado.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +10,7 @@
     <title>Resultados da Pesquisa</title>
 </head>
 <body>
-    <h1>Resultados da Pesquisa</h1><!--local para mostrar os dads -->>
+    <h1>Resultados da Pesquisa</h1><!--local para mostrar os dads -->
     <table border="1">
         <tr>
             <th>ID</th>
@@ -34,7 +34,7 @@
         {% endfor %}
     </table>
     <br>
-    <a href="{{ url_for('pesquisar_dados') }}">Nova Pesquisa</a><!--link para a pagina de pesquisa-->>
+    <a href="{{ url_for('pesquisar_dados') }}">Nova Pesquisa</a><!--link para a pagina de pesquisa-->
     <br>
     <a href="{{ url_for('todos_os_dados') }}">Ver Todas as Reservas</a><!--link para a pagina de mostrar os dados do banco-->
 </body>
