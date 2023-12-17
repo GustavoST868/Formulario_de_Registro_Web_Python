@@ -67,7 +67,6 @@ def obter_data_atual():
 
 
 #Todas as operacoes na aplicacao flask necessitam de uma rota  e de uma funcao em si para que elas funcionem
-
 # Função obtem os dados da pagina html,mandando esses dados para as respectivas tabelas
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -115,7 +114,7 @@ def todos_os_dados():
     conn.close()
     return render_template('todos_os_dados.html', dados=dados)
 
-# Rota para apagar um dado por índice na tabela
+#Rota para apagar um dado por índice na tabela
 @app.route('/apagar/<int:indice>', methods=['GET'])
 def apagar_dado_por_indice_rota(indice):
     with app.app_context():
